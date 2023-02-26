@@ -1,0 +1,41 @@
+name: _Obsidian Code Blocks
+
+
+matches:
+
+
+# 📌 method 1
+  - triggers: [PY] 
+    replace: " ```Python \n\n$|$\n\n ```"
+
+  - triggers: [JS] 
+    replace: " ```Javascript \n\n$|$\n\n ```"
+
+  - triggers: [C+] 
+    replace: " ```C++ \n\n$|$\n\n ```"
+
+  - triggers: [JV] 
+    replace: " ```Java \n\n$|$\n\n ```"
+
+  - triggers: [XL] 
+    replace: " ```EXCEL \n\n$|$\n\n ```"
+
+  - triggers: [RS] 
+    replace: "```RUST \n\n$|$\n\n ```"
+
+  - triggers: [YM] 
+    replace: "```YAML \n\n$|$\n\n ```"
+
+
+# 📌 method 2
+  - trigger: "codefence"
+    form: |
+      [[choices]]
+    form_fields:
+      choices:
+        type: list
+        values:
+          - " ```python \n\n$|$\n\n ```"
+          - " ```javascript \n\n$|$\n\n ```"
+          - " ```C \n\n$|$\n\n```"
+

@@ -1,0 +1,80 @@
+# name: _Obsidian Callouts
+
+matches:
+
+
+# 📌 The dropdown box method
+# 🪲problem is that it skips to the next line, preventing you from writing a title next to the callout
+  - trigger: "calout"
+    form: |
+      [[choices]]
+    form_fields:
+      choices:
+        type: list
+        values:
+          - "> [!TLDR]$|$"
+          - "> [!TIP]$|$"
+          - "> [!QUESTION]$|$"
+          - "> [!WARNING]$|$"
+          - "> [!BUG]$|$"
+          - "> [!SUCCESS]$|$"
+          - "> [!EXAMPLE]$|$"
+          - "> [!TODO]$|$"
+          - "> [!FAIL]$|$"
+          - "> [!DANGER]$|$"
+          - "> [!QUOTE]$|$"
+
+# 📌 triggers:replace method
+# better because auto expands (save time) and allows to insert title next to it instead of having to navigate back to the title section 
+# allows multiple triggers
+
+  - triggers: [TLR] 
+    replace: "> [!TLDR] $|$"
+
+  - triggers: [TIP] 
+    replace: "> [!TIP]$|$"
+
+  - triggers: [Q?] 
+    replace: "> [!QUESTION]$|$"
+
+  - triggers: [SUC] 
+    replace: "> [!SUCCESS] $|$"
+
+  - triggers: [DO] 
+    replace: "> [!TODO] $|$"
+
+  - triggers: [WRN] 
+    replace: "> [!WARNING] $|$"
+
+  - triggers: [EX] 
+    replace: "> [!EXAMPLE] $|$"
+
+  - triggers: [QT] 
+    replace: "> [!QUOTE] $|$"
+
+  - triggers: [BG, bug] 
+    replace: "> [!BUG] $|$"
+
+
+
+# 📌 Alternative method
+# Similar to the first method, for those who prefer an alternative
+  - trigger: "/call"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: choice
+        params:
+          values:
+          - "> [!todo]+"
+          - "> [!tip]+"
+          - "> [!success]+"
+          - "> [!question]+"
+          - "> [!warning]"
+          - "> [!fail]+"
+          - "> [!danger]"
+          - "> [!bug]+"
+          - "> [!example]+"
+          - "> [!quote]+"
+
+

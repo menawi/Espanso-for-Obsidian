@@ -1,0 +1,18 @@
+name: _Obsidian Headers
+
+
+matches:
+
+# Starts at H3 and onwards
+
+  - triggers: [h3] 
+    replace: "### $|$"
+
+  - triggers: [h4] 
+    replace: "#### $|$"
+
+  - triggers: [h5] 
+    replace: "#### $|$"
+
+  - triggers: [h6] 
+    replace: "##### $|$"
