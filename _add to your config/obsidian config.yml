@@ -1,0 +1,6 @@
+filter_exec: '/Applications/Obsidian.app'
+extra_includes:
+  - "../match/Obsidian/_Obsidian Callouts.yml"
+  - "../match/Obsidian/_Obsidian Code Blocks.yml"
+  - "../match/Obsidian/_Obsidian Headers.yml"
+
